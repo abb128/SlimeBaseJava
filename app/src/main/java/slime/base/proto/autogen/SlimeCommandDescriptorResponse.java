@@ -11,7 +11,7 @@ import java.util.UUID;
 
 /**  Upon receiving such a descriptor, the server must respond acknowledging that the descriptor was successfully received: */
 public class SlimeCommandDescriptorResponse implements CommandData {
-	public static final UUID COMMAND_UUID = UUID.fromString("00000005-445e-4484-bc3d-f0c696a3080c");
+	public static final UUID COMMAND_UUID = UUID.fromString("00000006-445e-4484-bc3d-f0c696a3080c");
 	public static final long FLAGS = 2;
 
 	/**  The handle value which the client sent */

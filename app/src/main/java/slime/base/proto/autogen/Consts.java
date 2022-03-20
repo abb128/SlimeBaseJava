@@ -17,24 +17,36 @@ public class Consts {
 	public static final long SLIME_HANDSHAKE_INIT_SHORT = 11359L;
 	/**  Value of SlimeHandshakeInit.magic_byte */
 	public static final long SLIME_HANDSHAKE_INIT_BYTE = 181L;
-	/**  Value of SlimeHandshakeInit.magic_uuid (92b40922-095c-4e37-9a42-f24d73ee3ae9) */
-	public static final UUID SLIME_HANDSHAKE_INIT_UUID = UUID.fromString("92b40922-095c-4e37-9a42-f24d73ee3ae9");
-	/**  Value of SlimeHandshakeResponse.magic */
+	/**  Value of SlimeHandshakeInit.magic_uuid (92b40922-445e-4484-bc3d-f0c696a3080c) */
+	public static final UUID SLIME_HANDSHAKE_INIT_UUID = UUID.fromString("92b40922-445e-4484-bc3d-f0c696a3080c");
+	/**  Value of SlimeHandshakeInitResponse.magic */
 	public static final long SLIME_HANDSHAKE_RESPONSE_MAGIC = 1029226168L;
+	/**  `SlimeHandshakeInitResponse` contained invalid magic values. */
+	public static final UUID SLIME_ERROR_INVALID_INIT_RESPONSE = UUID.fromString("10000001-445e-4484-bc3d-f0c696a3080c");
+	/**  A command was received with an invalid handle. */
+	public static final UUID SLIME_ERROR_INVALID_HANDLE = UUID.fromString("10000002-445e-4484-bc3d-f0c696a3080c");
 
 
 	/** Enum value part of SlimeReservedHandle */
 	public static final int SLIME_HANDLE_HANDSHAKE_INIT = 1;
 	/** Enum value part of SlimeReservedHandle */
-	public static final int SLIME_HANDLE_HANDSHAKE = 2;
+	public static final int SLIME_HANDLE_HANDSHAKE_INIT_R = 2;
 	/** Enum value part of SlimeReservedHandle */
-	public static final int SLIME_HANDLE_HANDSHAKE_R = 3;
+	public static final int SLIME_HANDLE_HANDSHAKE = 3;
 	/** Enum value part of SlimeReservedHandle */
-	public static final int SLIME_HANDLE_CMD_DESC = 4;
+	public static final int SLIME_HANDLE_HANDSHAKE_R = 4;
 	/** Enum value part of SlimeReservedHandle */
-	public static final int SLIME_HANDLE_CMD_DESC_R = 5;
+	public static final int SLIME_HANDLE_CMD_DESC = 5;
 	/** Enum value part of SlimeReservedHandle */
-	public static final int SLIME_HANDLE_PACKET_ACK = 6;
+	public static final int SLIME_HANDLE_CMD_DESC_R = 6;
+	/** Enum value part of SlimeReservedHandle */
+	public static final int SLIME_HANDLE_PACKET_ACK = 7;
+	/** Enum value part of SlimeReservedHandle */
+	public static final int SLIME_HANDLE_REPORT_ERROR = 8;
+	/** Enum value part of SlimeReservedHandle */
+	public static final int SLIME_HANDLE_FINALIZE_DESCRIPTORS = 9;
+	/** Enum value part of SlimeReservedHandle */
+	public static final int SLIME_HANDLE_RESET_REQUEST = 10;
 
 
 	/** Enum value part of SlimeReliabilityBits */
@@ -59,5 +71,11 @@ public class Consts {
 	public static final int SLIME_COMMAND_ACK_OK = 1;
 	/** Enum value part of SlimeCommandDescriptorStatus */
 	public static final int SLIME_COMMAND_ACK_UNKNOWN = 2;
+
+
+	/** Enum value part of SlimeResetRequestType */
+	public static final int SLIME_RESET_REQUEST_RETRY_HANDSHAKE = 1;
+	/** Enum value part of SlimeResetRequestType */
+	public static final int SLIME_RESET_REQUEST_REBOOT = 2;
 
 }

@@ -11,7 +11,7 @@ import java.util.UUID;
 
 /**  This is the second packet sent by the client. If this packet is received in the middle of a connection, the server should clear its internal connection data (such as the handle→command map) and start all over again. */
 public class SlimeHandshake implements CommandData {
-	public static final UUID COMMAND_UUID = UUID.fromString("00000002-445e-4484-bc3d-f0c696a3080c");
+	public static final UUID COMMAND_UUID = UUID.fromString("00000003-445e-4484-bc3d-f0c696a3080c");
 	public static final long FLAGS = 1;
 
 	/**  Should be set to 1. */

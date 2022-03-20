@@ -45,7 +45,6 @@ public class HandshakeHandlerFactory extends BaseHandlerFactory {
 
         private void sendResponse(){
             SlimeHandshakeResponse response = new SlimeHandshakeResponse();
-            response.magic = 1029226168L;
             attorney().sendPacket(response);
         }
     }

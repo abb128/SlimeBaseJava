@@ -40,6 +40,7 @@ public class HandshakeInitHandlerFactory extends BaseHandlerFactory {
                         && (data.magic_byte == Consts.SLIME_HANDSHAKE_INIT_BYTE)
                 ){
                     setDetectedReadingMode(m);
+                    sendResponse();
                     return;
                 }
 
@@ -55,6 +56,11 @@ public class HandshakeInitHandlerFactory extends BaseHandlerFactory {
 
         }
 
+        private void sendResponse(){
+            SlimeHandshakeInitResponse response = new SlimeHandshakeInitResponse();
+            response.magic = Consts.SLIME_HANDSHAKE_RESPONSE_MAGIC;
+            attorney().sendPacket(response);
+        }
 
         private void setDetectedReadingMode(SByteReadingMode to){
             System.out.println("Reading mode: " + to.toString());

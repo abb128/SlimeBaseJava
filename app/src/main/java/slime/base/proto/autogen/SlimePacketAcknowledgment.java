@@ -11,7 +11,7 @@ import java.util.UUID;
 
 /**  */
 public class SlimePacketAcknowledgment implements CommandData {
-	public static final UUID COMMAND_UUID = UUID.fromString("00000006-445e-4484-bc3d-f0c696a3080c");
+	public static final UUID COMMAND_UUID = UUID.fromString("00000007-445e-4484-bc3d-f0c696a3080c");
 	public static final long FLAGS = 3;
 
 	/**  */

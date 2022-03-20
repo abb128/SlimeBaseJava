@@ -11,7 +11,7 @@ import java.util.UUID;
 
 /**  Command descriptors are sent by the tracker following the handshake. */
 public class SlimeCommandDescriptor implements CommandData {
-	public static final UUID COMMAND_UUID = UUID.fromString("00000004-445e-4484-bc3d-f0c696a3080c");
+	public static final UUID COMMAND_UUID = UUID.fromString("00000005-445e-4484-bc3d-f0c696a3080c");
 	public static final long FLAGS = 1;
 
 	/**  An identifier for the command, used by the server to look up and find the correct handler for this command type. This is similar to the idea of a packet type in the old protocol, except there are now 128-bits and a simple process to generate new ones. */

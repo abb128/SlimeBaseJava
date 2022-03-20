@@ -14,16 +14,16 @@ public class SlimeHandshakeInit implements CommandData {
 	public static final UUID COMMAND_UUID = UUID.fromString("00000001-445e-4484-bc3d-f0c696a3080c");
 	public static final long FLAGS = 1;
 
-	/**  Should be set to SLIME_HANDSHAKE_INIT_UUID */
+	/**  Must be set to SLIME_HANDSHAKE_INIT_UUID */
 	public UUID magic_uuid;
 
-	/**  Should be set to SLIME_HANDSHAKE_INIT_INT */
+	/**  Must be set to SLIME_HANDSHAKE_INIT_INT */
 	public long magic_int;
 
-	/**  Should be set to SLIME_HANDSHAKE_INIT_SHORT */
+	/**  Must be set to SLIME_HANDSHAKE_INIT_SHORT */
 	public int magic_short;
 
-	/**  Should be set to SLIME_HANDSHAKE_INIT_BYTE */
+	/**  Must be set to SLIME_HANDSHAKE_INIT_BYTE */
 	public short magic_byte;
 
 	@Override

@@ -156,9 +156,11 @@ public class ClientSession {
 
         private void insertDefaults(){
             boolean v = true;
+            // TODO: autogen this hopefully
             v = v&&describeCommand(Handle.fromByte((byte)Consts.SLIME_HANDLE_HANDSHAKE_INIT), SlimeHandshakeInit.COMMAND_UUID, Consts.SLIME_COMMAND_CLIENT_SENDS);
             v = v&&describeCommand(Handle.fromByte((byte)Consts.SLIME_HANDLE_HANDSHAKE), SlimeHandshake.COMMAND_UUID, Consts.SLIME_COMMAND_CLIENT_SENDS);
             v = v&&describeCommand(Handle.fromByte((byte)Consts.SLIME_HANDLE_HANDSHAKE_R), SlimeHandshakeResponse.COMMAND_UUID, Consts.SLIME_COMMAND_SERVER_SENDS);
+            v = v&&describeCommand(Handle.fromByte((byte)Consts.SLIME_HANDLE_HANDSHAKE_INIT_R), SlimeHandshakeInitResponse.COMMAND_UUID, Consts.SLIME_COMMAND_SERVER_SENDS);
 
             if(!v){
                 System.out.println("Failed to describe commands! This shouldn't happen");
@@ -166,48 +168,4 @@ public class ClientSession {
             }
         }
     }
-
-    /*
-    private SlimePacketParserProvider provider;
-    private SlimeUtil.SlimeReliabilityBits reliability;
-    
-    private Map<Handle, SlimePacketParser> parsers;
-    private Queue<ByteBuffer> outgoing;
-    
-    ClientSession(SlimePacketParserProvider provider){
-        this.provider = provider;
-        
-        this.parsers = new HashMap<Handle, SlmePacketParser>();
-        this.outgoing = new LinkedList<ByteBuffer>();
-    }
-    
-    public ByteBuffer popOutgoingOrNull(){
-        return outgoing.poll();
-    }
-    
-    public void tick(){
-    
-    }
-    
-    
-    public void acceptPacket(byte[] data, int length){
-        System.out.println("Received packet of size " + String.valueOf(length));
-        ByteBuffer buf = ByteBuffer.wrap(data, 0, length);
-        
-        Handle handle = Handle.get_s(buf);
-        System.out.println("Handle is " + handle.toString());
-    }
-    
-    public void handshake(int protocol_version, UUID firmware, UUID hardware, UUID hw_uid, int reliability){
-        System.out.println("Handshake received!");
-        System.out.println(" * Firmware: " + firmware.toString());
-        System.out.println(" * Hardware: " + hardware.toString());
-        System.out.println(" * Hw UID: " + hw_uid.toString());
-        System.out.println(" * Reliability: " + reliability.toString());
-    }
-    
-    public void describeCommand(UUID uuid, int flags, Handle tgt){
-        
-    }
-    */
 }
